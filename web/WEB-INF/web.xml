@@ -23,6 +23,11 @@
         <servlet-class>guestbook.OfySignGuestbookServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>emailer</servlet-name>
+        <servlet-class>guestbook.EmailServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>sign</servlet-name>
         <url-pattern>/sign</url-pattern>
@@ -31,6 +36,11 @@
     <servlet-mapping>
         <servlet-name>ofysign</servlet-name>
         <url-pattern>/ofysign</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>emailer</servlet-name>
+        <url-pattern>/email</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

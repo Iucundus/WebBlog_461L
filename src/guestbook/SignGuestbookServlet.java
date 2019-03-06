@@ -32,12 +32,12 @@ public class SignGuestbookServlet extends HttpServlet {
         // guestbook.Guestbook should be limited to ~1/second.
         String guestbookName = req.getParameter("guestbookName");
         Key guestbookKey = KeyFactory.createKey("guestbook.Guestbook", guestbookName);
-        String content = req.getParameter("content");
+        String content = req.getParameter("address");
         Date date = new Date();
         Entity greeting = new Entity("Greeting", guestbookKey);
-        greeting.setProperty("user", user);
+        greeting.setProperty("name", user);
         greeting.setProperty("date", date);
-        greeting.setProperty("content", content);
+        greeting.setProperty("address", content);
 
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();

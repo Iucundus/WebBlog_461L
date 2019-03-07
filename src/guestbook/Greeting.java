@@ -17,10 +17,12 @@ public class Greeting implements Comparable<Greeting> {
     @Index User user;
     @Index String content;
     @Index Date date;
+    @Index String title;
     private Greeting() {}
-    public Greeting(User user, String content, String guestbookName) {
+    public Greeting(User user, String content, String guestbookName, String title) {
         this.user = user;
         this.content = content;
+        this.title = title;
         this.guestbookName = Key.create(Guestbook.class, guestbookName);
         date = new Date();
     }
@@ -31,6 +33,7 @@ public class Greeting implements Comparable<Greeting> {
         return content;
     }
     public Date getDate() { return date; }
+    public String getTitle() { return title; }
 
     @Override
     public int compareTo(Greeting other) {

@@ -38,14 +38,7 @@ public class SubscriberServlet extends HttpServlet {
         List<Subscriber> subscribers = ObjectifyService.ofy().load().type(Subscriber.class).list();
         Collections.sort(subscribers);
 
-        String msgtext = "";
-        for (Subscriber subscriber : subscribers) {
-            msgtext += "A subscriber: " + subscriber.getUser() + " ";
-            msgtext += subscriber.getAddress();
-            msgtext += "\n\n";
-        }
-
-        resp.addHeader("body", msgtext);
+        resp.sendRedirect("ofyguestbook.jsp");
     }
 
 }

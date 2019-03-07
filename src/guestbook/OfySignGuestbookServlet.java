@@ -25,14 +25,16 @@ public class OfySignGuestbookServlet extends HttpServlet {
         UserService userService = UserServiceFactory.getUserService();
         User user = userService.getCurrentUser();
 
-        if (user == null)
+        if (user == null) {
+            resp.sendRedirect("/ofyguestbook.jsp?attemptedAnonPost=true");
             return;
+        }
         String guestbookName = req.getParameter("guestbookName");
         Key guestbookKey = KeyFactory.createKey("guestbook.Guestbook", guestbookName);
         String content = req.getParameter("content");
+        String title = req.getParameter("title");
         Date date = new Date();
-
-        Greeting greeting = new Greeting(user, content, guestbookName);
+        Greeting greeting = new Greeting(user, content, guestbookName, title);
         ofy().save().entity(greeting).now();   // synchronous
         resp.sendRedirect("/ofyguestbook.jsp?guestbookName=" + guestbookName);
     }

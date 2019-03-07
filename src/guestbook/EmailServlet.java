@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class EmailServlet extends HttpServlet {
 
@@ -28,8 +25,10 @@ public class EmailServlet extends HttpServlet {
         List<Greeting> greetings = ObjectifyService.ofy().load().type(Greeting.class).list();
         Collections.sort(greetings);
 
-        String msgtext = "";
+        String msgtext = "Digest of the newest posts:\n\n";
         for (Greeting greeting : greetings) {
+            if (greeting.getDate().before(new Date(System.currentTimeMillis() - (24 * 60 * 60 * 1000))))
+                continue;
             msgtext += "Author: " + greeting.getUser() + "\n";
             msgtext += greeting.getContent();
             msgtext += "\n\n";

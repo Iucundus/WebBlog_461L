@@ -8,10 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="622369b2-5f36-433b-9ad3-23fd93552d6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/guestbook/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guestbook/EmailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guestbook/SignGuestbookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guestbook/SignGuestbookServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guestbook/Subscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guestbook/Subscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/cron.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/cron.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guestbook/Greeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guestbook/Greeting.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/guestbook/EmailServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+            <state relative-caret-position="260">
+              <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1456#1464#0" expanded="true" />
@@ -74,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            <state relative-caret-position="605">
+              <caret line="69" column="12" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -83,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/guestbook/Greeting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="440">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,11 +168,12 @@
         <option value="$PROJECT_DIR$/src/guestbook/OfySignGuestbookServlet.java" />
         <option value="$PROJECT_DIR$/web/ofyguestbook.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/cron.xml" />
-        <option value="$PROJECT_DIR$/src/guestbook/EmailServlet.java" />
         <option value="$PROJECT_DIR$/src/guestbook/SubscriberServletDelete.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/guestbook/SubscriberServlet.java" />
         <option value="$PROJECT_DIR$/src/guestbook/Subscriber.java" />
+        <option value="$PROJECT_DIR$/src/guestbook/Greeting.java" />
+        <option value="$PROJECT_DIR$/src/guestbook/EmailServlet.java" />
       </list>
     </option>
   </component>
@@ -239,7 +237,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551995786384" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551997361263" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -370,7 +368,7 @@
       <workItem from="1551833190665" duration="4048000" />
       <workItem from="1551906226503" duration="4233000" />
       <workItem from="1551910602772" duration="205000" />
-      <workItem from="1551991454605" duration="4322000" />
+      <workItem from="1551991454605" duration="5884000" />
     </task>
     <task id="LOCAL-00001" summary="Added email servlet&#10;&#10;Also changed web.xml to include servlet mapping">
       <created>1551836892669</created>
@@ -383,7 +381,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25010000" />
+    <option name="totallyTimeSpent" value="26572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,7 +411,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.24487594" />
+      <window_info active="true" anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.24487594" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3297414" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -492,16 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/guestbook/Greeting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/ofyguestbook.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -543,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="52" column="41" lean-forward="true" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/guestbook/Subscriber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -574,10 +555,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/guestbook/Greeting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="69" column="12" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/guestbook/EmailServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="53" column="37" lean-forward="true" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        <state relative-caret-position="260">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1456#1464#0" expanded="true" />

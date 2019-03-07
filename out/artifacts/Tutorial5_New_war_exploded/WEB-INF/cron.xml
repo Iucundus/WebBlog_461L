@@ -3,6 +3,6 @@
     <cron>
         <url>/email</url>
         <description>Send subscriber email</description>
-        <schedule>every day 16:45</schedule>
+        <schedule>every day 17:00</schedule>
     </cron>
 </cronentries>

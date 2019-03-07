@@ -27,10 +27,9 @@ public class OfySignGuestbookServlet extends HttpServlet {
 
         if (user == null)
             return;
-
         String guestbookName = req.getParameter("guestbookName");
         Key guestbookKey = KeyFactory.createKey("guestbook.Guestbook", guestbookName);
-        String content = req.getParameter("address");
+        String content = req.getParameter("content");
         Date date = new Date();
 
         Greeting greeting = new Greeting(user, content, guestbookName);

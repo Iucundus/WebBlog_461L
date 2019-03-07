@@ -1,11 +1,10 @@
 package guestbook;
 
 import com.google.appengine.api.users.User;
-import com.googlecode.objectify.Key;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
-import com.googlecode.objectify.annotation.Parent;
+
 import java.util.Date;
 
 
@@ -13,21 +12,22 @@ import java.util.Date;
 public class Subscriber implements Comparable<Subscriber> {
     //@Parent Key<Guestbook> guestbookName;
     @Id Long id;
-    @Index User name;
+    @Index User user;
     @Index String address;
     @Index Date date;
     private Subscriber() {}
     public Subscriber(User name, String address) {
-        this.name = name;
+        this.user = name;
         this.address = address;
         date = new Date();
     }
-    public User getName() {
-        return name;
+    public User getUser() {
+        return user;
     }
     public String getAddress() {
         return address;
     }
+    public Long getId() { return id; }
 
     @Override
     public int compareTo(Subscriber other) {

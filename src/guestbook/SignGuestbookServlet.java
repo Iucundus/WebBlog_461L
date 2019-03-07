@@ -35,7 +35,7 @@ public class SignGuestbookServlet extends HttpServlet {
         String content = req.getParameter("address");
         Date date = new Date();
         Entity greeting = new Entity("Greeting", guestbookKey);
-        greeting.setProperty("name", user);
+        greeting.setProperty("user", user);
         greeting.setProperty("date", date);
         greeting.setProperty("address", content);
 

@@ -30,6 +30,7 @@ public class Greeting implements Comparable<Greeting> {
     public String getContent() {
         return content;
     }
+    public Date getDate() { return date; }
 
     @Override
     public int compareTo(Greeting other) {

@@ -28,6 +28,16 @@
         <servlet-class>guestbook.EmailServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>subscribers</servlet-name>
+        <servlet-class>guestbook.SubscriberServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>subscriberdelete</servlet-name>
+        <servlet-class>guestbook.SubscriberServletDelete</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>sign</servlet-name>
         <url-pattern>/sign</url-pattern>
@@ -41,6 +51,16 @@
     <servlet-mapping>
         <servlet-name>emailer</servlet-name>
         <url-pattern>/email</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>subscribers</servlet-name>
+        <url-pattern>/subscribers</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>subscriberdelete</servlet-name>
+        <url-pattern>/subscriberdelete</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

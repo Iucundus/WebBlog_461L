@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class EmailServlet extends HttpServlet {
 
@@ -27,21 +25,34 @@ public class EmailServlet extends HttpServlet {
         List<Greeting> greetings = ObjectifyService.ofy().load().type(Greeting.class).list();
         Collections.sort(greetings);
 
-        String msgtext = "";
+        String msgtext = "Digest of the newest posts:\n\n";
         for (Greeting greeting : greetings) {
+            if (greeting.getDate().before(new Date(System.currentTimeMillis() - (24 * 60 * 60 * 1000))))
+                continue;
             msgtext += "Author: " + greeting.getUser() + "\n";
             msgtext += greeting.getContent();
             msgtext += "\n\n";
         }
 
+        ObjectifyService.register(Subscriber.class);
+        List<Subscriber> subs = ObjectifyService.ofy().load().type(Subscriber.class).list();
+        Collections.sort(subs);
+
+        List<String> emails = new ArrayList<String>();
+        for (Subscriber s : subs) {
+            emails.add(s.getAddress());
+        }
+
         try {
-            Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress("admin@webblog461l.appspotmail.com", "461L Web Blog Admin"));
-            msg.addRecipient(Message.RecipientType.TO,
-                    new InternetAddress("john.koelling@utexas.edu", "Interested User"));
-            msg.setSubject("Do you wish to subscribe?");
-            msg.setText(msgtext);
-            Transport.send(msg);
+            for (String address: emails) {
+                Message msg = new MimeMessage(session);
+                msg.setFrom(new InternetAddress("admin@webblog461l.appspotmail.com", "461L Web Blog Admin"));
+                msg.addRecipient(Message.RecipientType.TO,
+                        new InternetAddress(address, "Interested User"));
+                msg.setSubject("Do you wish to subscribe?");
+                msg.setText(msgtext);
+                Transport.send(msg);
+            }
         } catch (AddressException e) {
             // ...
         } catch (MessagingException e) {

@@ -30,6 +30,7 @@ public class EmailServlet extends HttpServlet {
             if (greeting.getDate().before(new Date(System.currentTimeMillis() - (24 * 60 * 60 * 1000))))
                 continue;
             msgtext += "Author: " + greeting.getUser() + "\n";
+            msgtext += "Title: " + greeting.getTitle() + "\n";
             msgtext += greeting.getContent();
             msgtext += "\n\n";
         }

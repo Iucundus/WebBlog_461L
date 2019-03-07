@@ -17,7 +17,34 @@ public class EmailServlet extends HttpServlet {
         ObjectifyService.register(Greeting.class);
     }
 
+    /*
+    Handles the GET request
+    Sends an email to every subscriber on the list
+     */
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        List<Subscriber> subs = ObjectifyService.ofy().load().type(Subscriber.class).list();
+        Collections.sort(subs);
+
+        List<String> emails = new ArrayList<String>();
+        for (Subscriber s : subs) {
+            emails.add(s.getAddress());
+        }
+        sendEmails(emails);
+    }
+
+    /*
+    Sends a single email to a specified address
+     */
+    public void sendOneEmail(String address) {
+        List<String> emails = new ArrayList<String>();
+        emails.add(address);
+        sendEmails(emails);
+    }
+
+    /*
+    Common functionality used by both above methods
+     */
+    public void sendEmails(List<String> targets) {
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
 
@@ -35,22 +62,13 @@ public class EmailServlet extends HttpServlet {
             msgtext += "\n\n";
         }
 
-        ObjectifyService.register(Subscriber.class);
-        List<Subscriber> subs = ObjectifyService.ofy().load().type(Subscriber.class).list();
-        Collections.sort(subs);
-
-        List<String> emails = new ArrayList<String>();
-        for (Subscriber s : subs) {
-            emails.add(s.getAddress());
-        }
-
         try {
-            for (String address: emails) {
+            for (String address: targets) {
                 Message msg = new MimeMessage(session);
-                msg.setFrom(new InternetAddress("admin@webblog461l.appspotmail.com", "461L Web Blog Admin"));
+                msg.setFrom(new InternetAddress("admin@webblog461l.appspotmail.com", "Dog Blog"));
                 msg.addRecipient(Message.RecipientType.TO,
                         new InternetAddress(address, "Interested User"));
-                msg.setSubject("Do you wish to subscribe?");
+                msg.setSubject("Dog Blog: Daily Digest");
                 msg.setText(msgtext);
                 Transport.send(msg);
             }
@@ -62,5 +80,4 @@ public class EmailServlet extends HttpServlet {
             // ...
         }
     }
-
 }

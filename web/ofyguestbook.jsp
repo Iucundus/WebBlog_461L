@@ -66,9 +66,12 @@
 <div class="h2">DogBlog '${fn:escapeXml(guestbookName)}' has no messages.</div></div>
 <%
 } else {
+	pageContext.setAttribute("postcount", greetings.size());
 %>
 <div style="background:#5e6877; vertical-align: top" class="d-flex justify-content-center">
-    <div class="h2"><b>Messages in DogBlog '${fn:escapeXml(guestbookName)}'.</b></div></div>
+    <div class="h2"><b>Messages in DogBlog '${fn:escapeXml(guestbookName)}'.</b></div>
+    <div class="h1"><b>Total posts: '${fn:escapeXml(postcount)}'.</b></div>
+</div>
 <%
     int i = 5;
     if(greetings.size() < 5 || pageContext.getAttribute("showAll").equals(true)){

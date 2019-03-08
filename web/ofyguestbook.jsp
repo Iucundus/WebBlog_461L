@@ -104,10 +104,12 @@
     <div><input type="submit" value="Subscribe to our Blog!" /></div>
     <input type="hidden" name="address" value="${fn:escapeXml(greeting_user.email)}"/>
 </form>
-<form action="/ofysign" method="post">
-    Post Title: <div><textarea name="title" rows="1" cols="60"></textarea></div>
-    Post Content: <div><textarea name="content" rows="3" cols="60"></textarea></div>
-    <div><input type="submit" value="Post Greeting" /></div>
+<form action="/subscriberdelete" method="post">
+    <div><input type="submit" value="Unsubscribe from our Blog!" /></div>
+    <input type="hidden" name="address" value="${fn:escapeXml(greeting_user.email)}"/>
+</form>
+<form action="/ofysign.jsp" method="get">
+    <div><input type="submit" value="Submit a new post!"/></div>
     <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 </form>
 </body>

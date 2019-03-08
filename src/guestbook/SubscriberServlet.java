@@ -35,8 +35,6 @@ public class SubscriberServlet extends HttpServlet {
         Subscriber subscriber1 = new Subscriber(UserServiceFactory.getUserService().getCurrentUser(), useraddress);
         ofy().save().entity(subscriber1).now();   // synchronous
 
-        List<Subscriber> subscribers = ObjectifyService.ofy().load().type(Subscriber.class).list();
-        Collections.sort(subscribers);
 
         resp.sendRedirect("ofyguestbook.jsp");
     }

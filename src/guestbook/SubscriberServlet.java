@@ -35,6 +35,7 @@ public class SubscriberServlet extends HttpServlet {
         Subscriber subscriber1 = new Subscriber(UserServiceFactory.getUserService().getCurrentUser(), useraddress);
         ofy().save().entity(subscriber1).now();   // synchronous
 
+        (new EmailServlet()).sendOneEmail(useraddress);
 
         resp.sendRedirect("ofyguestbook.jsp");
     }
